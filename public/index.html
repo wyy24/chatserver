@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Socket Basico</title>
+    <!--<link rel="stylesheet" href="css/index.css"/>-->
+    <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css">
+    <style>
+    .chat_window {
+    position: absolute;
+    width: calc(100% - 20px);
+    max-width: 750px;
+    height: 500px;
+    border-radius: 10px;
+    background-color: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    background-color: #f8f8f8;
+    overflow: hidden;
+  }
+
+  .top_menu .button{
+    margin: 3px 0 0 20px;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 30%;
+    display: inline-block;
+    margin-right: 8px;
+    position: relative;
+    background-color: #f5886e;
+    background-color: #fdbf68;
+    background-color: #a3d063;
+  }
+  .top_menu{
+    text-align: center;
+    color: #bcbdc0;
+    font-size: 15px;
+  }
+  .card-header{
+    text-align: center;
+    background-color: rgba(110, 214, 222, 0.512);
+  }
+  #mensajediv{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+  #mensaje{
+    width: 88%;
+    text-align: center;
+    border-radius: 25px;
+    border: 2px solid #9be3f0;
+  }
+  #usuariosdiv{
+    float: right;
+    text-align: center;
+  }
+  #usuario{
+    border-radius: 10px;
+  }
+
+  </style>
+  </head>
+  <body>
+    <br>
+  <div class="container">
+    <div class="card text-white bg-primary mb-3" style="max-width: 10rem;">
+      <h4 class="card-title">USUARIOS:</h4>
+      <div class="card-text" id="notificaciones"></div>
+    </div>
+  </div>
+  <div class="chat_window">
+      <header class="card-header">
+        <div class="card border-light mb-3"> Chat Socket.io Del Castillo Aguirre Wendy</div>
+        <h4 class="text-info">Hola, bienvenid@</h4>
+      </header>
+      <br>
+      <table>
+      <td>
+        <div class="container" >
+          <div class="top_menu">
+            <label for="usuario">Escribe un nombre de usuario: </label><br>
+            <input type="text" class="usuario" id="usuario" placeholder="Usuario" required>
+          </div>
+        </td>  
+        </div>
+    </table>
+      <br>
+      <div class="container" id="chatdiv">
+          <h1 class="encabezado">Chat</h1>
+          <div class="contenedorChat" id="salida"></div>
+          <div class="avisos" id="notificaciones" ></div>
+      </div>
+      <div class="mb-3" id="mensajediv">
+          <br><input type="text" class="mensaje" id="mensaje" placeholder="Mensaje" required autocomplete="language" size="50px"> 
+          <button type="submit" class="btn btn-success" id="enviar">Enviar</button>
+      </div>
+  </div>
+    <script src="js/socket.io.js"></script>
+    <script src="js/logica.js" charset="utf-8"></script>
+  </body>
+</html>
